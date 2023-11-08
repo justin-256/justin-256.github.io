@@ -9,7 +9,7 @@ layout: base
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
-    {% assign posts = paginator.posts %}
+    {% assign posts = site.posts %}
   {% endif %}
 
   {%- if posts.size > 0 -%}
