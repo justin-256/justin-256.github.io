@@ -1,0 +1,38 @@
+{% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+    {% else %}
+      <span>&laquo; Prev</span>
+    {% endif %}
+    
+    {% if paginator.next_page %}{% assign url = paginator.next_page_path | split: "/"%}
+    {% elsif paginator.previous_page %}{% assign url = paginator.previous_page_path | split: "/"%}
+    {% endif %}
+    {% for item in url %}
+      {% assign itemnonum = item | slice: 0, 4%}
+        {% if itemnonum == "page" %}
+          {% assign position = forloop.index0 %}
+          {% break %}
+        {% endif %}
+        {% assign position = 999 %}
+      {% endfor %}
+
+    {% assign baseurl = url | slice: 0, position | join: "/" %}
+    {% assign withsub = baseurl | append: "/page:num" %}
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <em>{{ page }}</em>
+      {% elsif page == 1 %}
+      <a href="{{ baseurl }}/">{{ page }}</a>
+      {% else %}
+      <a href="{{ withsub | replace: ':num', page }}">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+    {% else %}
+      <span>Next &raquo;</span>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,122 @@
+.site-header {
+  padding: 3px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("/assets/banner.jpg");
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.packing {
+  width: 10%;
+}
+
+.site-header > h1 {
+  width: 100%;
+  margin-right: 10%;
+}
+
+.home-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+body {
+  margin: 0px;
+  background: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  margin: 30px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.post-meta {
+  font-size: 18px;
+  color: black;
+}
+
+.post-link {
+  display: block;
+  font-size: 25px;
+  color: #3638b1;
+  text-decoration: none;
+  margin-top: 3px;
+}
+
+.post-link:hover {
+  color: DodgerBlue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.pagination {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.pagination > a {
+  text-align: center;
+  display: inline-block;
+  color: Green;
+  margin: 3px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
