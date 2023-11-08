@@ -1,54 +1,50 @@
 ---
 layout: base
+pagination: 
+  enabled: true
 ---
 
 <div class="home">
   {{ content }}
 
-  <!-- this is a test comment -->
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
 
-  {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <div class="leftcolumn">
-      {%- include pagination.html -%}
+  {% assign posts = paginator.posts %}
 
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in posts -%}
-        <div class="card">
-        <a class="post-link" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
-        <h5 class="post-meta">{{ post.date | date: date_format }}</h5>
-              {%- if post.thumbnail -%}
-                <img src="{{ post.thumbnail }}">
-              {%- endif -%}
-              {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-              </div>
-      {%- endfor -%}
-      
-      {%- include pagination.html -%}
-    </div>
-    <div class="rightcolumn">
-        <div class="card">
-          <input type="text" placeholder="Search..">
-        </div>
-        <div class="card">
-          <h3>Topics</h3>
-          <ul>
-            {% for category in site.categories %}
-            <li><a href="{{ site.config['category_dir'] | append: "/category/" | append: category[0] }}">{{ category[0] }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-
+  {%- if page.list_title -%}
+  <h2 class="post-list-heading">{{ page.list_title }}</h2>
   {%- endif -%}
+  <div class="leftcolumn">
+    {%- include pagination.html -%}
 
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    {%- for post in posts -%}
+    <div class="card">
+    <a class="post-link" href="{{ post.url | relative_url }}"> {{ post.title | escape }} </a>
+    <h5 class="post-meta">{{ post.date | date: date_format }}</h5>
+    {%- if post.thumbnail -%}
+    <img src="{{ post.thumbnail }}">
+    {%- endif -%}
+    {%- if site.show_excerpts -%}
+    {{ post.excerpt }}
+    {%- endif -%}
+    </div>
+    {%- endfor -%}
+    
+    {%- include pagination.html -%}
+  </div>
+  <div class="rightcolumn">
+    <!--
+    <div class="card">
+      <input type="text" placeholder="Search..">
+    </div>
+    -->
+    <div class="card">
+      <h3>Topics</h3>
+      <ul>
+        {% for category in site.categories %}
+        <li><a href="{{ site.config['category_dir'] | append: "/category/" | append: category[0] }}">{{ category[0] }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 </div>
