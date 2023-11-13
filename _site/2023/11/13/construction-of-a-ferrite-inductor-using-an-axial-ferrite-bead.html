@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	
+	<title>Construction of a ferrite inductor using an axial ferrite bead - Justin's Blog</title>
+	
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body><header class="site-header">
+    <div class="packing">
+	
+	<a href="/" class="home-btn">
+	    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/>
+	    </svg>
+	</a> 
+	
+    </div>
+    <h1>Justin Campbell</h1>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Construction of a ferrite inductor using an axial ferrite bead</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-11-13T00:00:00-05:00" itemprop="datePublished">
+        Nov 13, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I required an inductor that had a fairly low inductance, but would be large if I wound it as an air core inductor. To increase inductance and reduce size, inductors are often wound around a ferrite material. In this case, I chose a ferrite bead I salvaged from a device a little while ago. It is likely the same or similar to Fair-Rite part “2773001112”, and is listed on DigiKey for $0.18 CAD as of August 2022: <a href="https://www.digikey.ca/en/products/detail/fair-rite-products-corp/2773001112/8594241">https://www.digikey.ca/en/products/detail/fair-rite-products-corp/2773001112/8594241</a></p>
+
+<h3 id="step-1-removing-wire">Step 1: Removing Wire</h3>
+<p>These ferrites have a wire that is glued inside, so heat must be used to losen it. This process would be easier on a new ferrite with straight leads. I used my soldering iron to heat the wire, and then pliers to gently pull it out. Take care when doing this as ferrite is very delicate and will shatter.</p>
+
+<p><img src="/assets/images/preview/ferrite-inductor-1.jpg" alt="Removing the leads from the bead" /></p>
+
+<p>After the wire was removed, I needed to remove excess glue remaining inside. I used a small drill bit for this mounted in a pin vise. A pin vise is like a precision screwdriver with a chuck to accept drill bits, and using one avoids snapping a small bit or damaging the ferrite. I used two bits to gradually enlarge the hole and eventually remove all the glue.</p>
+
+<p><img src="/assets/images/preview/ferrite-inductor-2.jpg" alt="Small drill bits" /></p>
+
+<h3 id="step-2-fitting-the-leads">Step 2: Fitting the leads</h3>
+
+<p>If you used a new ferrite, you could save the wire. Since mine was quite short, I chose to use the leads from a diode. They fit well in the holes, and with some glue they could be mounted securely. I scored a small mark in them so I would know how far to insert them without having them touch creating a short.</p>
+
+<p><img src="/assets/images/preview/ferrite-inductor-3.jpg" alt="Making new leads" /></p>
+
+<p>I used standard CA type superglue to secure them. I suggest using a more heat resistant glue, as the glue I used became soft when the leads were heated for too long.</p>
+
+<h3 id="step-3-winding">Step 3: Winding</h3>
+
+<p>Now it is time to make the turns on the core. I used 30 AWG enameled copper wire from an old electromagnet. I have found that they rarely have lacquer securing the windings, so they are like little bobbins of easily reusable wire. After tinning an end, I wrapped it around one of the inductor leads. Mounting the inductor in my drill helped with the winding process. I glued the wire to the core so that the windings could be made easily. I experimented with different numbers of turns before so I knew how many to make.</p>
+
+<p><img src="/assets/images/preview/ferrite-inductor-4.jpg" alt="Glue sticks on the first winding" /></p>
+
+<p>Before soldering the other side I suggest leaving a length of wire and testing it, that way if you need to add a turn you have some wire left to do so. After winding, tinning the other end and wrapping it around the second lead to secure it, I spun it on my drill while applying a layer of glue to secure the windings. Here is the final result, before I soldered the other end. It looks quite good, and seems to work quite well for my oscillator application.</p>
+
+<p><img src="/assets/images/preview/ferrite-inductor.jpg" alt="Finished coil" /></p>
+
+
+  </div><a class="u-url" href="/2023/11/13/construction-of-a-ferrite-inductor-using-an-axial-ferrite-bead" hidden></a>
+  
+  <script>
+    function pic(evt) {
+      //evt.currentTarget.src="https://i.redd.it/e3hct8wiogu51.jpg";
+    }
+  
+    const imgs = document.getElementsByTagName("img");
+    for(const i of imgs) {
+      i.addEventListener(
+        "click",
+        pic
+        );
+
+    }
+    
+  </script>
+</article>
+
+      </div>
+    </main>
+  
+  </body>
+</html>
