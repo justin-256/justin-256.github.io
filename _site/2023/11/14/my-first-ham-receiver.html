@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	
+	<title>My First HAM Receiver - Justin's Blog</title>
+	
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body><header class="site-header">
+    <div class="packing">
+	
+	<a href="/" class="home-btn">
+	    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/>
+	    </svg>
+	</a> 
+	
+    </div>
+    <h1>Justin Campbell</h1>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My First HAM Receiver</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2023-11-14T00:00:00-05:00" itemprop="datePublished">
+        Nov 14, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I built a radio receiver!</p>
+
+<p>Well, not a very complicated one, but it does work. It is not a broadcast band receiver, and is not meant to pick up your regular AM or FM music. This radio receives the 40m amateur band, from 7 to 7.3 Mhz. It is a direct conversion SSB receiver. I have been wanting to get into ham radio, and this is my first poke into the hobby. After a year of struggling to receive anything, I took a short break, and with my days of summer break coming to a close I decided to build a radio. With only 2 days to spare, I got to work. I first built a double balanced mixer, using two toroids salvaged from some small transformers. A double balanced mixer takes two signals input, multiplies them together, and out comes the sum and difference of the two frequencies (or their components). This is how the radio down converts the RF radio waves to audible sound.</p>
+
+<p>I then built a PTO, or permeability tuned oscillator. Using a brass screw that moves in or out of a coil, its resonant frequency can change giving a fairly precise tuning.</p>
+
+<p>For audio, I used a super simple LM386 amplifier that feeds a speaker power amp. This gives a quiet but audible signal.</p>
+
+<p>Somehow the radio worked on the first try. I had tested it on some harmonics of a ~3.5Mhz square wave from my function generator, but I was not expecting to hear actual voices! I listened in on a range of signals, most notably the “Brothers Net”, where one man was asking questions that were answered by others. Unfortunately, my radio was not powerful enough to pick these answers up, but they were normally repeated by the host, and I would think of answers to the questions in my head. The Brothers Net has a website that can be found at  <a href="http://www.w9bro.net/">http://www.w9bro.net/</a></p>
+
+<p>Here is a picture of the radio. It is quite messy, but it worked!</p>
+
+<p><img src="/assets/images/preview/direct-conversion-ssb-1.jpg" alt="Picture of the finished receiver" /></p>
+
+
+  </div><a class="u-url" href="/2023/11/14/my-first-ham-receiver" hidden></a>
+  
+  <script>
+    function pic(evt) {
+      //evt.currentTarget.src="https://i.redd.it/e3hct8wiogu51.jpg";
+    }
+  
+    const imgs = document.getElementsByTagName("img");
+    for(const i of imgs) {
+      i.addEventListener(
+        "click",
+        pic
+        );
+
+    }
+    
+  </script>
+</article>
+
+      </div>
+    </main>
+  
+  </body>
+</html>

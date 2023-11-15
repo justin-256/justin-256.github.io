@@ -2,6 +2,13 @@
 
 [
   {
+      "title"    : "My First HAM Receiver",
+      "url"      : "/2023/11/14/my-first-ham-receiver",
+      "date"     : "14 Nov 2023",
+      "description" : "",
+      "tags"     : []
+    },
+{
       "title"    : "Construction of a ferrite inductor using an axial ferrite bead",
       "url"      : "/2023/11/13/construction-of-a-ferrite-inductor-using-an-axial-ferrite-bead",
       "date"     : "13 Nov 2023",
