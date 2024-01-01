@@ -71,6 +71,19 @@
   <script>
     function pic(evt) {
       //evt.currentTarget.src="https://i.redd.it/e3hct8wiogu51.jpg";
+      var dir = evt.currentTarget.src.split("/");
+      const pos = dir.indexOf("preview");
+      if (pos > -1) {
+	dir.splice(pos, 1);
+      } else {
+	dir = [
+          ...dir.slice(0, -1),
+          "preview",
+          ...dir.slice(-1)
+        ];
+	
+      }
+      evt.currentTarget.src = dir.join('/');
     }
   
     const imgs = document.getElementsByTagName("img");
