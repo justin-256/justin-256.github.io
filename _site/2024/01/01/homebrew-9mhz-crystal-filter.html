@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	
+	<title>Homebrew 9MHz Crystal Filter - Justin's Blog</title>
+	
+	<link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body><header class="site-header">
+    <div class="packing">
+	
+	<a href="/" class="home-btn">
+	    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#ffffff}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/>
+	    </svg>
+	</a> 
+	
+    </div>
+    <h1>Justin Campbell</h1>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Homebrew 9MHz Crystal Filter</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2024-01-01T00:00:00-05:00" itemprop="datePublished">
+        Jan 1, 2024
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>== Happy new year! ==</p>
+
+<p>There are many types of band pass filter, filters that only let a certain range of frequencies through. Some allow a wide pass band, and are great for letting only the range of frequencies a device operates on through, reducing interferance and harmonics. Others, such as crystal filters, have a very small and narrow bandwidth, and possess a very high <a href="https://en.wikipedia.org/wiki/Q_factor">Q  factor</a>.</p>
+
+<p>In a superheterodyne reciever, a narrow band pass filter is used to select the desired signal from the neighbouring stations. For SSB, 2.5KHz is ideal, but can be varied to give the desired performance. In general, the more complex a filter is, the sharper it’s skirt is, but with more components in the signal path more losses can be observed.</p>
+
+<p>I bought 50 crystals of part <a href="https://www.digikey.ca/en/products/detail/ecs-inc/ECS-90-18-4XEN/2213495">ECS-90-18-4XEN from DigiKey</a>. They are 9MHz crystals, because I want to use the standard IF frequency of 9MHz in my receiver. For this filter I used 4 crystals.</p>
+
+<h3 id="why-buy-50">Why buy 50?</h3>
+
+<p>Aside from the quantity discount, the crystals in the filter should ideally be matched. This means individually measuring each one and sorting them. As the crystals I bought are quite good quality, this is probably not as necesarry, but if you buy a bag of bulk cheap crystals of questionable quality from Amazon/Aliexpress/some other online store like some other people have done, you will have to sort them because they have a worse tolerance. Some even plain don’t work, and I believe it is likely that they are rejects from a production line that are being sold.</p>
+
+<p>To measure the crystals, I used a little crystal tester I built a little while ago <a href="https://www.youtube.com/watch?v=blalAktxFoI">showcased on YouTube by W2AEW</a> connected to my frequency counter. Absolute accuracy is not nearly as important as relative accuracy! Let your equipment warm up and become stable before proceeding with measurments. You can also use other methods such as using a NanoVNA, and I am sure all work great. Try to get 1Hz resolution if you can.</p>
+
+<h3 id="impedance-matching">Impedance matching</h3>
+
+<p>Crystal filters are NOT 50 ohms unless they have been matched. Typically they are around 200 ohms. To match them properly, I used some 1:4 impedance transformers. Is my filter 200 ohms? No clue, but it seemed to work. I wound two bifilar toroidal transformers on some 43 material ferrites.</p>
+
+<p><img src="/assets/images/preview/impedance_matching_transformer_1_4.png" alt="1:4 Impedance transformer" /></p>
+
+<h3 id="construction">Construction</h3>
+<p>I did not calculate any values here! I simply threw in some 47pf C0G capacitors that I had seen used in other filters and it seemed to work.</p>
+
+<p>I had some ripple, but it is not too bad. I did not measure anything so this is to be expected. I previously had even worse ripple and large losses because I had tried some random powdered iron toroids, but they are designed for lower frequency power filtering applications and not RF.</p>
+
+<p>I used my favourite building technique of cutting channels in copper clad board with a utility blade, and soldering parts to it on the surface.</p>
+
+<p>I still need to ground the crystal housings, this can help with signal leakage.</p>
+
+<p><img src="/assets/images/preview/9mhz_crystal_filter_1.jpg" alt="Completed crystal filter 1" />
+<img src="/assets/images/preview/9mhz_crystal_filter_2.jpg" alt="Completed crystal filter 2" /></p>
+
+<p>Connecting it to my NanoVNA, I observed the following response:</p>
+
+<p><img src="/assets/images/preview/9mhz_crystal_filter_sweep.png" alt="NanoVNA sweep" /></p>
+
+
+  </div><a class="u-url" href="/2024/01/01/homebrew-9mhz-crystal-filter" hidden></a>
+  
+  <script>
+    function pic(evt) {
+      //evt.currentTarget.src="https://i.redd.it/e3hct8wiogu51.jpg";
+    }
+  
+    const imgs = document.getElementsByTagName("img");
+    for(const i of imgs) {
+      i.addEventListener(
+        "click",
+        pic
+        );
+
+    }
+    
+  </script>
+</article>
+
+      </div>
+    </main>
+  
+  </body>
+</html>
